@@ -79,3 +79,32 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
             cursor.execute(query)
         except IntegrityError as err:
             print(f"{err} : \n{row}")
+    # Lecture pour lesInscriptions
+    # ----------------------------
+    df_inscriptions = pandas.read_excel(file, sheet_name='LesInscriptions', dtype=str)
+    df_inscriptions = df_inscriptions.where(pandas.notnull(df_inscriptions), 'null')
+
+    cursor = data.cursor()
+    for ix, row in df_inscriptions.iterrows():
+        try:
+            query = "insert into LesInscriptions values ({},{})".format(row['numIn'],row['numEp'])
+            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
+            print(query)
+            cursor.execute(query)
+        except IntegrityError as err:
+            print(f"{err} : \n{row}")
+
+    # Lecture pour lesResultats
+    # ----------------------------
+    df_resultats = pandas.read_excel(file, sheet_name='LesResultats', dtype=str)
+    df_resultats = df_resultats.where(pandas.notnull(df_resultats), 'null')
+
+    cursor = data.cursor()
+    for ix, row in df_resultats.iterrows():
+        try:
+            query = "insert into LesResultats values ({},{},{},{})".format(row['numEp'],row['gold'],row['silver'],row['bronze'])
+            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
+            print(query)
+            cursor.execute(query)
+        except IntegrityError as err:
+            print(f"{err} : \n{row}")
