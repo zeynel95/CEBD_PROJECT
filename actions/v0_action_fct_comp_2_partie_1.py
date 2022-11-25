@@ -11,15 +11,18 @@ class AppFctComp2Partie1(QDialog):
     # Constructeur
     def __init__(self, data:sqlite3.Connection):
         super(QDialog, self).__init__()
-        self.ui = uic.loadUi("gui/fct_comp_2.ui", self)
+        self.ui = uic.loadUi("gui/fct_comp_2_modified.ui", self)
         self.data = data
+        cursor = self.data.cursor()
+        result = cursor.execute("SELECT DISTINCT categorieEp FROM V0_LesEpreuves")
+        display.refreshGenericData(self.ui.tableWidget, result)
 
     # Fonction de mise à jour de l'affichage
     def refreshResult(self):
         # TODO 1.2 : fonction à modifier pour remplacer la zone de saisie par une liste de valeurs issues de la BD une
         #  fois le fichier ui correspondant mis à jour
-        display.refreshLabel(self.ui.label_fct_comp_2, "")
-        if not self.ui.lineEdit_fct_comp_2.text().strip():
+        # display.refreshLabel(self.ui.label_fct_comp_2, "")
+        if not self.ui.tableWidget.currentItem():
             self.ui.table_fct_comp_2.setRowCount(0)
             display.refreshLabel(self.ui.label_fct_comp_2, "Veuillez indiquer un nom de catégorie")
         else:
@@ -27,7 +30,7 @@ class AppFctComp2Partie1(QDialog):
                 cursor = self.data.cursor()
                 result = cursor.execute(
                     "SELECT numEp, nomEp, formeEp, nomDi, categorieEp, nbSportifsEp, strftime('%Y-%m-%d',dateEp,'unixepoch') FROM LesEpreuves WHERE categorieEp = ?",
-                    [self.ui.lineEdit_fct_comp_2.text().strip()])
+                    [self.ui.tableWidget.currentItem().text().strip()])
             except Exception as e:
                 self.ui.table_fct_comp_3.setRowCount(0)
                 display.refreshLabel(self.ui.label_fct_comp_2, "Impossible d'afficher les résultats : " + repr(e))
