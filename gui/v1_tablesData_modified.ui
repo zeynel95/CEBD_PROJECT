@@ -31,7 +31,7 @@
      <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>4</number>
+        <number>5</number>
        </property>
        <widget class="QWidget" name="tabEpreuves">
         <attribute name="title">
@@ -462,6 +462,56 @@
          </column>
         </widget>
         <widget class="QLabel" name="label_ageResultats">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>520</y>
+           <width>741</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tabNbEquipe">
+        <attribute name="title">
+         <string>NbEquipe</string>
+        </attribute>
+        <widget class="QTableWidget" name="tableNbEquipe">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>926</width>
+           <height>488</height>
+          </rect>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>110</number>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>50</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>numEq</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>nbEquipiersEq</string>
+          </property>
+         </column>
+        </widget>
+        <widget class="QLabel" name="label_nbEquipe">
          <property name="geometry">
           <rect>
            <x>20</x>
