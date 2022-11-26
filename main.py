@@ -29,6 +29,7 @@ class AppWindow(QMainWindow):
     fct_fournie_2_dialog = None
     fct_comp_1_dialog = None
     fct_comp_2_dialog = None
+    tablesAgeSportifs = None
 
     # Constructeur
     def __init__(self):
@@ -233,6 +234,7 @@ class AppWindow(QMainWindow):
     ####################################################################################################################
     # Fonctions liées aux évènements (signal/slot/event)
     ####################################################################################################################
+
 
     # TODO 2 : penser à fermer correctement les fenêtres de la partie 2
     # TODO 3 : penser à fermer correctement il faut les fenêtres de la partie 3

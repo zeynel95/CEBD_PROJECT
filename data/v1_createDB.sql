@@ -53,5 +53,12 @@ CREATE TABLE LesResultats
 );
 
 -- TODO 1.4a : ajouter la définition de la vue LesAgesSportifs
+
+CREATE VIEW LesAgesSportifs
+(
+  SELECT numSp, nomSp, prenomSp, pays, categorieSp, dateNaisSp, cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', dateNaisSp) as int)  as age
+  FROM LesSportifsEQ
+);
+
 -- TODO 1.5a : ajouter la définition de la vue LesNbsEquipiers
 -- TODO 3.3 : ajouter les éléments nécessaires pour créer le trigger (attention, syntaxe SQLite différent qu'Oracle)
