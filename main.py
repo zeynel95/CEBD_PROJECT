@@ -14,6 +14,8 @@ from actions.v0_action_fct_comp_1_partie_1 import AppFctComp1Partie1
 from actions.v0_action_fct_comp_2_partie_1 import AppFctComp2Partie1
 from actions.action_ageMoyEq import AppAgeMoyEq
 from actions.action_classementPays import AppClassementPays
+from actions.action_insertEpreuve import AppInsertEpreuve
+from actions.action_insertResult import AppInsertResult
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -33,6 +35,8 @@ class AppWindow(QMainWindow):
     fct_comp_2_dialog = None
     ageMoyEq_dialog = None
     classementPays_dialog = None
+    insertEpreuve_dialog = None
+    insertResult_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -250,6 +254,21 @@ class AppWindow(QMainWindow):
         self.classementPays_dialog = AppClassementPays(self.data)
         self.classementPays_dialog.show()
         self.changedValue.connect(self.classementPays_dialog.refreshResult)
+
+    def open_insertEpreuve(self):
+        if self.insertEpreuve_dialog is not None:
+            self.insertEpreuve_dialog.close()
+        self.insertEpreuve_dialog = AppInsertEpreuve(self.data)
+        self.insertEpreuve_dialog.show()
+        self.changedValue.connect(self.insertEpreuve_dialog.refreshResult)
+
+    def open_insertResult(self):
+        if self.insertResult_dialog is not None:
+            self.insertResult_dialog.close()
+        self.insertResult_dialog = AppInsertResult(self.data)
+        self.insertResult_dialog.show()
+        self.changedValue.connect(self.insertResult_dialog.refreshResult)
+
     ####################################################################################################################
     # Fonctions liées aux évènements (signal/slot/event)
     ####################################################################################################################
@@ -278,6 +297,10 @@ class AppWindow(QMainWindow):
             self.ageMoyEq_dialog.close()
         if (self.classementPays_dialog is not None):
             self.classementPays_dialog.close()
+        if (self.insertEpreuve_dialog is not None):
+            self.insertEpreuve_dialog.close()
+        if (self.insertResult_dialog is not None):
+            self.insertResult_dialog.close()
 
         # On ferme proprement la base de données
         self.data.close()

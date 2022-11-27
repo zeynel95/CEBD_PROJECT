@@ -43,7 +43,7 @@ class AppTablesDataV1(QDialog):
         self.refreshTable(self.ui.label_inscriptions, self.ui.tableInscriptions, "SELECT numIn, numEp FROM LesInscriptions")
         self.refreshTable(self.ui.label_resultats, self.ui.tableResultats, "SELECT numEp, gold, silver, bronze FROM LesResultats")
         self.refreshTable(self.ui.label_ageResultats, self.ui.tableAgeResultats, "SELECT numSp, nomSp, prenomSp, pays, categorieSp, dateNaisSp, cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', dateNaisSp) as int)  FROM LesSportifsEQ")
-        self.refreshTable(self.ui.label_nbEquipe, self.ui.tableNbEquipe, "SELECT numEq, count(numEq) FROM LesSportifsEQ GROUP BY (numEq)")
+        self.refreshTable(self.ui.label_nbEquipe, self.ui.tableNbEquipe, "SELECT numEq, count(numSp) FROM LesSportifsEQ GROUP BY (numEq) HAVING numEq is not null")
 
         # TODO 1.3 : modifier pour afficher les nouveaux éléments (il faut aussi changer le fichier .ui correspondant)
         # TODO 1.4b : ajouter l'affichage des éléments de la vue LesAgesSportifs après l'avoir créée

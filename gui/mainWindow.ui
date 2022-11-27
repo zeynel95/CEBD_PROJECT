@@ -1213,6 +1213,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_3_1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_insertEpreuve()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>394</x>
+     <y>740</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>742</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_insertResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>387</x>
+     <y>783</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>530</x>
+     <y>790</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createDBV0()</slot>
@@ -1230,5 +1262,7 @@
   <slot>createTriggersDBV1()</slot>
   <slot>open_ageMoyEq()</slot>
   <slot>open_classementPays()</slot>
+  <slot>open_insertEpreuve()</slot>
+  <slot>open_insertResult()</slot>
  </slots>
 </ui>
