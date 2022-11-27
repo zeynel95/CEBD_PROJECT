@@ -1,1 +1,2 @@
 -- TODO 3.3 Créer un trigger pertinent
+-- cree trigger pour foreign key bronze, silver, gold
