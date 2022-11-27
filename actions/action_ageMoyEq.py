@@ -22,8 +22,7 @@ class AppAgeMoyEq(QDialog):
         display.refreshLabel(self.ui.label_ageMoy, "")
         try:
             cursor = self.data.cursor()
-            result = cursor.execute(
-                "WITH ageMoyEq(numEq, age) AS (SELECT numEq, cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', dateNaisSp) as int) FROM LesSportifsEQ) SELECT numEq,AVG(age)  FROM ageMoyEq GROUP BY numEq HAVING numEq in (SELECT gold FROM LesResultats)")
+            result = cursor.execute("SELECT * FROM ageMoyEq")
         except Exception as e:
             self.ui.table_ageMoy.setRowCount(0)
             display.refreshLabel(self.ui.label_ageMoy, "Impossible d'afficher les résultats : " + repr(e))

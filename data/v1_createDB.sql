@@ -66,8 +66,35 @@ as
   SELECT numEq, COUNT(numEq)
   FROM LesSportifsEQ
   GROUP BY numEq
+  HAVING numEq is not null
+;
+
+CREATE VIEW ageMoyEq (numEq, age)
+as
+  WITH ageMoyEq(numEq, age) AS 
+  (
+    SELECT numEq, cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', dateNaisSp) as int) 
+    FROM LesSportifsEQ
+  ) 
+  SELECT numEq,AVG(age)  
+  FROM ageMoyEq GROUP BY numEq 
+  HAVING numEq in (SELECT gold FROM LesResultats)
+;
+
+
+CREATE VIEW classementPays (pays, gold, silver, bronze)
+as
+  with paysNum(pays,num) as ( SELECT distinct pays, numEq FROM LesSportifsEQ UNION SELECT pays, numSp FROM LesSportifsEQ ),
+  tgoldb(pays, nb) as ( SELECT pays, COUNT(gold) FROM paysNum JOIN LesResultats ON(num = gold) GROUP BY pays ),
+  tgold(pays,gold) as (SELECT DISTINCT pays, 0 FROM LesSportifsEQ WHERE pays not in (select pays from tgoldb) UNION select pays, nb FROM tgoldb),
+  tsilverb(pays, nb) as ( SELECT pays, COUNT(silver) FROM paysNum JOIN LesResultats ON(num = silver) GROUP BY pays ),
+  tsilver(pays,silver) as (SELECT DISTINCT pays, 0 FROM LesSportifsEQ WHERE pays not in (select pays from tsilverb) UNION select pays, nb FROM tsilverb),
+  tbronzeb(pays, nb) as ( SELECT pays, COUNT(bronze) FROM paysNum JOIN LesResultats ON(num = bronze) GROUP BY pays ),
+  tbronze(pays,bronze) as (SELECT DISTINCT pays, 0 FROM LesSportifsEQ WHERE pays not in (select pays from tbronzeb) UNION select pays, nb FROM tbronzeb)
+  SELECT pays, gold, silver, bronze
+  FROM tgold JOIN tsilver USING(pays) JOIN tbronze USING(pays)
+  ORDER by gold DESC, silver DESC, bronze DESC
 ;
 
 -- TODO 1.5a : ajouter la définition de la vue LesNbsEquipiers
 -- TODO 3.3 : ajouter les éléments nécessaires pour créer le trigger (attention, syntaxe SQLite différent qu'Oracle)
-;
