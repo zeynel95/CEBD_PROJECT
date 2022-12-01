@@ -16,6 +16,8 @@ from actions.action_ageMoyEq import AppAgeMoyEq
 from actions.action_classementPays import AppClassementPays
 from actions.action_insertEpreuve import AppInsertEpreuve
 from actions.action_insertResult import AppInsertResult
+from actions.action_removeSportif import AppRemoveSportif
+
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -37,6 +39,7 @@ class AppWindow(QMainWindow):
     classementPays_dialog = None
     insertEpreuve_dialog = None
     insertResult_dialog = None
+    removeSportif_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -268,6 +271,13 @@ class AppWindow(QMainWindow):
         self.insertResult_dialog = AppInsertResult(self.data)
         self.insertResult_dialog.show()
         self.changedValue.connect(self.insertResult_dialog.refreshResult)
+
+    def open_removeSportif(self):
+        if self.removeSportif_dialog is not None:
+            self.removeSportif_dialog.close()
+        self.removeSportif_dialog = AppRemoveSportif(self.data)
+        self.removeSportif_dialog.show()
+        self.changedValue.connect(self.removeSportif_dialog.refreshResult)
 
     ####################################################################################################################
     # Fonctions liées aux évènements (signal/slot/event)

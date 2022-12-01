@@ -39,7 +39,8 @@ class AppTablesDataV1(QDialog):
     def refreshAllTablesV1(self):
 
         self.refreshTable(self.ui.label_epreuves, self.ui.tableEpreuves, "SELECT * FROM LesEpreuves")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT * FROM LesSportifsEQ")
+        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT * FROM LesSportifs")
+        self.refreshTable(self.ui.label_equipes, self.ui.tableEquipes, "SELECT * FROM LesEquipes")
         self.refreshTable(self.ui.label_inscriptions, self.ui.tableInscriptions, "SELECT * FROM LesInscriptions")
         self.refreshTable(self.ui.label_resultats, self.ui.tableResultats, "SELECT * FROM LesResultats")
         self.refreshTable(self.ui.label_ageResultats, self.ui.tableAgeResultats, "SELECT * FROM LesAgesSportifs")

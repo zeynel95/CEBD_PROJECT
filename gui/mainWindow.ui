@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
+    <width>725</width>
     <height>900</height>
    </rect>
   </property>
@@ -282,7 +282,7 @@
      <rect>
       <x>10</x>
       <y>190</y>
-      <width>689</width>
+      <width>671</width>
       <height>19</height>
      </rect>
     </property>
@@ -930,13 +930,26 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="deleteperson">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>790</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>supprimer element</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>710</width>
+     <width>725</width>
      <height>21</height>
     </rect>
    </property>
@@ -1245,6 +1258,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>deleteperson</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_removeSportif()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>817</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>182</x>
+     <y>794</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createDBV0()</slot>
@@ -1264,5 +1293,6 @@
   <slot>open_classementPays()</slot>
   <slot>open_insertEpreuve()</slot>
   <slot>open_insertResult()</slot>
+  <slot>open_removeSportif()</slot>
  </slots>
 </ui>
