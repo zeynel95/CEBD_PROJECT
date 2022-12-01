@@ -930,19 +930,6 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="deleteperson">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>790</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>supprimer element</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1230,7 +1217,7 @@
    <sender>pushButton_3_1</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>open_insertEpreuve()</slot>
+   <slot>open_gererInscription()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>394</x>
@@ -1246,7 +1233,7 @@
    <sender>pushButton_3_2</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>open_insertResult()</slot>
+   <slot>open_gererResultat()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>387</x>
@@ -1255,22 +1242,6 @@
     <hint type="destinationlabel">
      <x>530</x>
      <y>790</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>deleteperson</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>open_removeSportif()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>108</x>
-     <y>817</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>182</x>
-     <y>794</y>
     </hint>
    </hints>
   </connection>
@@ -1291,8 +1262,7 @@
   <slot>createTriggersDBV1()</slot>
   <slot>open_ageMoyEq()</slot>
   <slot>open_classementPays()</slot>
-  <slot>open_insertEpreuve()</slot>
-  <slot>open_insertResult()</slot>
-  <slot>open_removeSportif()</slot>
+  <slot>open_gererInscription()</slot>
+  <slot>open_gererResultat()</slot>
  </slots>
 </ui>

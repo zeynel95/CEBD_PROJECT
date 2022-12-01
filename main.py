@@ -14,9 +14,8 @@ from actions.v0_action_fct_comp_1_partie_1 import AppFctComp1Partie1
 from actions.v0_action_fct_comp_2_partie_1 import AppFctComp2Partie1
 from actions.action_ageMoyEq import AppAgeMoyEq
 from actions.action_classementPays import AppClassementPays
-from actions.action_insertEpreuve import AppInsertEpreuve
-from actions.action_insertResult import AppInsertResult
-from actions.action_removeSportif import AppRemoveSportif
+from actions.action_gererEpreuve import AppGereEpreuve
+from actions.action_gererResult import AppGereResultat
 
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
@@ -37,9 +36,8 @@ class AppWindow(QMainWindow):
     fct_comp_2_dialog = None
     ageMoyEq_dialog = None
     classementPays_dialog = None
-    insertEpreuve_dialog = None
-    insertResult_dialog = None
-    removeSportif_dialog = None
+    gererEpreuve_dialog = None
+    gererResultat_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -258,26 +256,33 @@ class AppWindow(QMainWindow):
         self.classementPays_dialog.show()
         self.changedValue.connect(self.classementPays_dialog.refreshResult)
 
-    def open_insertEpreuve(self):
-        if self.insertEpreuve_dialog is not None:
-            self.insertEpreuve_dialog.close()
-        self.insertEpreuve_dialog = AppInsertEpreuve(self.data)
-        self.insertEpreuve_dialog.show()
-        self.changedValue.connect(self.insertEpreuve_dialog.refreshResult)
+    def open_gererInscription(self):
+        if self.gererEpreuve_dialog is not None:
+            self.gererEpreuve_dialog.close()
+        self.gererEpreuve_dialog = AppGereEpreuve(self.data)
+        self.gererEpreuve_dialog.show()
+        # self.changedValue.connect(self.gererEpreuve_dialog.refreshResult)
 
-    def open_insertResult(self):
-        if self.insertResult_dialog is not None:
-            self.insertResult_dialog.close()
-        self.insertResult_dialog = AppInsertResult(self.data)
-        self.insertResult_dialog.show()
-        self.changedValue.connect(self.insertResult_dialog.refreshResult)
+    def open_gererResultat(self):
+        if self.gererResultat_dialog is not None:
+            self.gererResultat_dialog.close()
+        self.gererResultat_dialog = AppGereResultat(self.data)
+        self.gererResultat_dialog.show()
+        # self.changedValue.connect(self.gererResultat_dialog.refreshResult)
 
-    def open_removeSportif(self):
-        if self.removeSportif_dialog is not None:
-            self.removeSportif_dialog.close()
-        self.removeSportif_dialog = AppRemoveSportif(self.data)
-        self.removeSportif_dialog.show()
-        self.changedValue.connect(self.removeSportif_dialog.refreshResult)
+    # def open_insertResult(self):
+    #     if self.insertResult_dialog is not None:
+    #         self.insertResult_dialog.close()
+    #     self.insertResult_dialog = AppInsertResult(self.data)
+    #     self.insertResult_dialog.show()
+    #     self.changedValue.connect(self.insertResult_dialog.refreshResult)
+
+    # def open_removeSportif(self):
+    #     if self.removeSportif_dialog is not None:
+    #         self.removeSportif_dialog.close()
+    #     self.removeSportif_dialog = AppRemoveSportif(self.data)
+    #     self.removeSportif_dialog.show()
+    #     self.changedValue.connect(self.removeSportif_dialog.refreshResult)
 
     ####################################################################################################################
     # Fonctions liées aux évènements (signal/slot/event)
@@ -307,10 +312,10 @@ class AppWindow(QMainWindow):
             self.ageMoyEq_dialog.close()
         if (self.classementPays_dialog is not None):
             self.classementPays_dialog.close()
-        if (self.insertEpreuve_dialog is not None):
-            self.insertEpreuve_dialog.close()
-        if (self.insertResult_dialog is not None):
-            self.insertResult_dialog.close()
+        if (self.gererEpreuve_dialog is not None):
+            self.gererEpreuve_dialog.close()
+        if (self.gererResultat_dialog is not None):
+            self.gererResultat_dialog.close()
 
         # On ferme proprement la base de données
         self.data.close()

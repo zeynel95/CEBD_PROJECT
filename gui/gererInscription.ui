@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>638</width>
-    <height>289</height>
+    <height>317</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,15 +19,15 @@
      <x>10</x>
      <y>20</y>
      <width>561</width>
-     <height>221</height>
+     <height>251</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="inserer">
     <attribute name="title">
-     <string>InsertTab</string>
+     <string>Inserer</string>
     </attribute>
     <widget class="QTextEdit" name="textEdit_2">
      <property name="geometry">
@@ -131,7 +131,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>30</y>
+       <y>50</y>
        <width>201</width>
        <height>31</height>
       </rect>
@@ -148,7 +148,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>30</y>
+       <y>50</y>
        <width>181</width>
        <height>31</height>
       </rect>
@@ -171,7 +171,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>70</y>
+       <y>10</y>
        <width>201</width>
        <height>31</height>
       </rect>
@@ -188,7 +188,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>70</y>
+       <y>10</y>
        <width>181</width>
        <height>31</height>
       </rect>
@@ -204,7 +204,7 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>201</width>
+       <width>221</width>
        <height>31</height>
       </rect>
      </property>
@@ -221,7 +221,7 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>201</width>
+       <width>221</width>
        <height>31</height>
       </rect>
      </property>
@@ -230,13 +230,13 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero d'epreuve :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero d'epreuve ancienne:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEditModifEp">
+    <widget class="QLineEdit" name="lineEditModifEpAnc">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>230</x>
        <y>60</y>
        <width>181</width>
        <height>31</height>
@@ -246,7 +246,7 @@ p, li { white-space: pre-wrap; }
     <widget class="QLineEdit" name="lineEditModifIn">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>230</x>
        <y>20</y>
        <width>181</width>
        <height>31</height>
@@ -257,8 +257,8 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>140</y>
-       <width>351</width>
+       <y>190</y>
+       <width>391</width>
        <height>21</height>
       </rect>
      </property>
@@ -270,7 +270,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>130</y>
+       <y>150</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -279,12 +279,91 @@ p, li { white-space: pre-wrap; }
       <string>Valider</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEditModifEpNou">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>100</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero d'epreuve nouveau:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_insertEpreuve</sender>
+   <signal>clicked()</signal>
+   <receiver>insertEpreuve</receiver>
+   <slot>insertInscription()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>224</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>489</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_RemoveEpreuve_2</sender>
+   <signal>clicked()</signal>
+   <receiver>insertEpreuve</receiver>
+   <slot>removeInscription()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>342</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_insertEpreuve_2</sender>
+   <signal>clicked()</signal>
+   <receiver>insertEpreuve</receiver>
+   <slot>ModifInscription()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>237</x>
+     <y>207</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>refreshResult()</slot>
+  <slot>insertInscription()</slot>
+  <slot>removeInscription()</slot>
+  <slot>ModifInscription()</slot>
  </slots>
 </ui>

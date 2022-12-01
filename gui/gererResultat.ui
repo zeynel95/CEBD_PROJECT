@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>638</width>
-    <height>289</height>
+    <height>441</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>20</y>
      <width>561</width>
-     <height>221</height>
+     <height>331</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -27,7 +27,7 @@
    </property>
    <widget class="QWidget" name="inserer">
     <attribute name="title">
-     <string>InsertTab</string>
+     <string>Inserer</string>
     </attribute>
     <widget class="QTextEdit" name="textEdit_2">
      <property name="geometry">
@@ -43,7 +43,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero d'epreuve :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero du premier(gold):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QTextEdit" name="textEdit">
@@ -60,10 +60,10 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero d'inscription :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero d'epreuve :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEditNum">
+    <widget class="QLineEdit" name="lineEditGold">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -83,11 +83,11 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_insertEpreuve">
+    <widget class="QLabel" name="label_insertResultat">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>150</y>
+       <x>20</x>
+       <y>250</y>
        <width>351</width>
        <height>21</height>
       </rect>
@@ -99,14 +99,68 @@ p, li { white-space: pre-wrap; }
     <widget class="QPushButton" name="pushButton_insertEpreuve">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>110</y>
+       <x>160</x>
+       <y>210</y>
        <width>75</width>
        <height>23</height>
       </rect>
      </property>
      <property name="text">
       <string>Valider</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero du second(silver) :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditSilver">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>120</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditBronxe">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>160</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero du troisieme(bronxe) :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -131,7 +185,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>30</y>
+       <y>50</y>
        <width>201</width>
        <height>31</height>
       </rect>
@@ -148,50 +202,23 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>30</y>
+       <y>50</y>
        <width>181</width>
        <height>31</height>
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_removeEp">
+    <widget class="QLabel" name="label_supprimeResultat">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>150</y>
+       <x>20</x>
+       <y>140</y>
        <width>411</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
       <string/>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>201</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;numero d'inscription a supprimer :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEditRemoveIn">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>70</y>
-       <width>181</width>
-       <height>31</height>
-      </rect>
      </property>
     </widget>
    </widget>
@@ -204,7 +231,7 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>201</width>
+       <width>221</width>
        <height>31</height>
       </rect>
      </property>
@@ -221,7 +248,7 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>201</width>
+       <width>221</width>
        <height>31</height>
       </rect>
      </property>
@@ -230,13 +257,13 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero d'epreuve :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero de nouveaux gold :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEditModifEp">
+    <widget class="QLineEdit" name="lineEditModifResGold">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>230</x>
        <y>60</y>
        <width>181</width>
        <height>31</height>
@@ -246,19 +273,19 @@ p, li { white-space: pre-wrap; }
     <widget class="QLineEdit" name="lineEditModifIn">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>230</x>
        <y>20</y>
        <width>181</width>
        <height>31</height>
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_insertEpreuve_2">
+    <widget class="QLabel" name="label_modifResultat">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>140</y>
-       <width>351</width>
+       <y>260</y>
+       <width>391</width>
        <height>21</height>
       </rect>
      </property>
@@ -270,7 +297,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>130</y>
+       <y>230</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -279,12 +306,121 @@ p, li { white-space: pre-wrap; }
       <string>Valider</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEditModifResSilver">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>100</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero de nouveaux silver:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditModifResBronxe">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>140</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saisissez le numero de nouveaux bronxe:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_insertEpreuve</sender>
+   <signal>clicked()</signal>
+   <receiver>insertEpreuve</receiver>
+   <slot>insertResultat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>370</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_RemoveEpreuve_2</sender>
+   <signal>clicked()</signal>
+   <receiver>insertEpreuve</receiver>
+   <slot>removeResultat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>168</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>384</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_insertEpreuve_2</sender>
+   <signal>clicked()</signal>
+   <receiver>insertEpreuve</receiver>
+   <slot>modifResultat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>refreshResult()</slot>
+  <slot>insertInscription()</slot>
+  <slot>removeInscription()</slot>
+  <slot>ModifInscription()</slot>
+  <slot>insertResultat()</slot>
+  <slot>removeResultat()</slot>
+  <slot>modifResultat()</slot>
  </slots>
 </ui>
